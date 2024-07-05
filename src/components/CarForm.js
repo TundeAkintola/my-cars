@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { changeName, changeCost, addCar } from "../store/slices";
+
 function CarForm() {
   const dispatch = useDispatch();
   const { name, cost } = useSelector((state) => {
     return { name: state.form.name, cost: state.form.cost };
   });
+
   const handleNameChange = (e) => {
     dispatch(changeName(e.target.value));
   };
